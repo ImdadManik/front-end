@@ -1,0 +1,16 @@
+.navbar {
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    height: 60px; /* Set a fixed height */
+    line-height: 60px; /* Align text vertically */
+    position: fixed; /* Fix the navbar to the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it's above other content */
+  } 
+ 
+  .navbar .logo {
+    height: 25px; /* Adjust as needed */
+    width: auto;  /* Maintain aspect ratio */
+    display: block; /* Ensure it’s displayed as a block element */
+  }

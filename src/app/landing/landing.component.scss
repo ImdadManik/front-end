@@ -1,0 +1,21 @@
+.landing-page {
+    height: 100vh;
+    background: url('/assets/images/landing.png') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 60px; /* Adjust based on navbar height */
+  }
+  
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    height: 40px; /* Adjust as needed */
+    width: auto;  /* Maintain aspect ratio */
+  }
+  
+  /* Add padding to the top to prevent content from being hidden behind the navbar */
+.container {
+    padding-top: 60px; /* Adjust based on navbar height */
+  }
+  

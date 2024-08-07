@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+/* Global styles */
+body {
+    padding-top: 60px; /* Adjust based on navbar height */
+  }
+  
+  /* Optionally, add specific styles for different screen sizes */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 60px; /* Ensure consistency on smaller screens */
+    }
+  }
+
+  .full-height {
+    height: 100vh; /* 100% of the viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Center vertically */
+    margin-top: 20px;
+     
+  }
