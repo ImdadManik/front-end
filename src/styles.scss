@@ -5,17 +5,17 @@ body {
   }
   
   /* Optionally, add specific styles for different screen sizes */
-  @media (max-width: 768px) {
-    body {
-      padding-top: 60px; /* Ensure consistency on smaller screens */
-    }
-  }
+  // @media (max-width: 768px) {
+  //   body {
+  //     padding-top: 60px; /* Ensure consistency on smaller screens */
+  //   }
+  // }
 
-  .full-height {
-    height: 100vh; /* 100% of the viewport height */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: flex-start; /* Center vertically */
-    margin-top: 20px;
+  // .full-height {
+  //   height: 100vh; /* 100% of the viewport height */
+  //   display: flex;
+  //   justify-content: center; /* Center horizontally */
+  //   align-items: flex-start; /* Center vertically */
+  //   margin-top: 20px;
      
-  }
+  // }
