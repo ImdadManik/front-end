@@ -13,7 +13,10 @@ import { AdminComponent } from './admin/admin.component';
 import { LandingComponent } from './landing/landing.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SideNavComponent } from './side-nav/side-nav.component';  
-import { LogoutComponent } from './logout/logout.component'; // Import MatExpansionModule
+import { LogoutComponent } from './logout/logout.component';
+import { ProjectListComponent } from './components/project-list/project-list.component';
+import { ProjectDetailComponent } from './components/project-detail/project-detail.component';
+import { ProjectFormComponent } from './components/project-form/project-form.component'; // Import MatExpansionModule
  
 
 @NgModule({
@@ -27,13 +30,17 @@ import { LogoutComponent } from './logout/logout.component'; // Import MatExpans
     LandingComponent,
     NavbarComponent,
     SideNavComponent,
-    LogoutComponent
+    LogoutComponent,
+    ProjectListComponent,
+    ProjectDetailComponent,
+    ProjectFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule, 
+    ReactiveFormsModule 
   ],
   providers: [{provide : HTTP_INTERCEPTORS, useClass : HttpInterceptor, multi: true}],
   bootstrap: [AppComponent]

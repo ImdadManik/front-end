@@ -13,13 +13,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   pubContent : string = '';
   user! : User;
   AuthUserSub! : Subscription;
+  
   constructor(
     private userService : UserService,
     private authService : AuthService
   ) {
   }
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+    debugger
     this.AuthUserSub = this.authService.AuthenticatedUser$.subscribe({
       next : user => {
         if(user) this.user = user;
@@ -33,6 +35,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       error : err => console.log(err)
     })
   }
+
   ngOnDestroy() {
     this.AuthUserSub.unsubscribe();
   }

@@ -17,7 +17,7 @@ export class NavbarComponent {
    this.AuthUserSub = this.authService.AuthenticatedUser$.subscribe({
       next : user => {
         if(user) {
-          this.isLogIn = user.role.name === 'ROLE_ADMIN';
+          this.isLogIn = user.role.name === 'ROLE_ADMIN' || user.role.name === 'ROLE_MANAGER';
         }
       }
     })

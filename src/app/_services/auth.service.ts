@@ -4,20 +4,20 @@ import {BehaviorSubject, catchError, tap, throwError} from "rxjs";
 import {User} from "../_models/user.model";
 import {StorageService} from "./storage.service";
 import {Router} from "@angular/router";
+import { environment } from '../../environments/environment';
 
 
 export interface AuthResponseData {
   id : number,
   email : string,
   roles : string[],
-}
-
+} 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  private  ApiUrl = environment.localUrl;
   AuthenticatedUser$  = new BehaviorSubject<User | null>(null);
 
   constructor(
@@ -27,9 +27,13 @@ export class AuthService {
   ) { }
 
   login(email : string, password: string) {
-    return this.http.request<AuthResponseData>('post','http://localhost:8086/api/v1/auth/authenticate',
+    debugger
+    console.log(`${this.ApiUrl}/auth/login`);
+     //return this.http.request<AuthResponseData>('post','http://localhost:8086/api/v1/auth/authenticate',
+     return this.http.request<AuthResponseData>('post',`${this.ApiUrl}/auth/login`,
       {
-        body : {email, password},
+        //body : {email, password},
+         body : {EMAIL: email, PASSWORD: password},
         withCredentials : true
       }).pipe(
         catchError(err => {
@@ -42,6 +46,7 @@ export class AuthService {
         }),
         tap(
           user => {
+            debugger
             const extractedUser : User = {
               email: user.email,
               id: user.id,
@@ -51,7 +56,9 @@ export class AuthService {
               }
             }
             this.storageService.saveUser(extractedUser);
+            debugger
             this.AuthenticatedUser$.next(extractedUser);
+            debugger
           }
         )
     );
