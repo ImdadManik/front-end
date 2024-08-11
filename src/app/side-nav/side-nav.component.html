@@ -11,6 +11,16 @@
             <li class="nav-item" *ngIf="showAdminBoard">
                 <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin Board</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="toggleProjects()">
+                    <i class="fa fa-project-diagram"></i> Projects
+                </a>
+                <ul class="list-unstyled" [ngClass]="{ 'd-block': isProjectsOpen, 'd-none': !isProjectsOpen }">
+                    <li><a class="nav-link" routerLink="/admin/create-project" routerLinkActive="active">Create</a></li>
+                    <li><a class="nav-link" routerLink="/admin/projects/:id" routerLinkActive="active">Update</a></li>
+                    <li><a class="nav-link" routerLink="/admin/projects" routerLinkActive="active">List</a></li>
+                </ul>
+            </li>
         </ul> 
     </nav> 
     <!-- Page Content  -->

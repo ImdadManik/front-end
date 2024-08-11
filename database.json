@@ -1,0 +1,124 @@
+{
+  "USERS": [
+    {
+      "ID": 1,
+      "FIRSTNAME": "ADMIN",
+      "LASTNAME": "KHAN",
+      "email": "ADMIN@MAIL.COM",
+      "PASSWORD": "$2A$10$TLHIGYKQBOPPMI.ZPLBARESACJ4X7/JK5AJ/MKESDYXLUSXYC/O5Q",
+      "ROLE": "ADMIN"
+    },
+    {
+      "ID": 2,
+      "FIRSTNAME": "Imdad",
+      "LASTNAME": "Manik",
+      "email": "imdad@mail.com",
+      "PASSWORD": "$2a$10$d4AuI1Uk5AoaCMmJhweL9e2siRZHWGMCGyQkC.nJlWVb12cv0oBWW",
+      "ROLE": "ADMIN"
+    },
+    {
+      "ID": null,
+      "FIRSTNAME": "Imdad1",
+      "LASTNAME": "Manik1",
+      "email": "imdad@gmail.com",
+      "PASSWORD": "$2a$10$hkGABODM2gx3/iNjw0PJfebLyWdOxM9IVOpCNd6ZOVLnnbRWHxxx.",
+      "ROLE": "MANAGER"
+    }
+  ],
+  "PROJECTS": [
+    {
+      "ID": 1,
+      "NAME": "PROJECT 1",
+      "DESCRIPTION": "THIS IS PROJECT 1",
+      "START_DATE": "2024-01-01",
+      "END_DATE": "2024-12-12",
+      "CITY": "NEW YORK",
+      "PHONE": "123-456-7890"
+    }
+  ],
+  "PROJECT_USERS": [
+    {
+      "PROJECT_ID": 1,
+      "USER_ID": 2
+    }
+  ],
+  "ROLES": [
+    {
+      "ROLE": "ADMIN",
+      "PERMISSION": []
+    },
+    {
+      "ROLE": "VIEWER",
+      "PERMISSION": [
+        "VIEW_TABLES",
+        "GENREPORTS",
+        "VIEW_HISTORY",
+        "VIEW_3DMODELS"
+      ]
+    },
+    {
+      "ROLE": "EDITOR",
+      "PERMISSION": [
+        "VIEW_TABLES",
+        "GENREPORTS",
+        "VIEW_HISTORY",
+        "VIEW_3DMODELS",
+        "TABLE_MANUAL",
+        "TABLE_DUPLICATE",
+        "TABLE_UPLOAD",
+        "TABLE_EDIT",
+        "TABLE_DELETE",
+        "TABLE_RECOVER",
+        "TABLE_EDIT_3DMODEL"
+      ]
+    },
+    {
+      "ROLE": "MANAGER",
+      "PERMISSION": [
+        "VIEW_TABLES",
+        "GENREPORTS",
+        "VIEW_HISTORY",
+        "VIEW_3DMODELS",
+        "TABLE_MANUAL",
+        "TABLE_DUPLICATE",
+        "TABLE_UPLOAD",
+        "TABLE_EDIT",
+        "TABLE_DELETE",
+        "TABLE_RECOVER",
+        "TABLE_EDIT_3DMODEL",
+        "PERMISSION_ASSIGNS",
+        "SETTINGS",
+        "UPLOAD_3DMODEL",
+        "PROGRESS_COLOR",
+        "LOCK_TABLE",
+        "UNLOCK_TABLE"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "ID": 1,
+      "FIRSTNAME": "ADMIN",
+      "LASTNAME": "KHAN",
+      "email": "ADMIN@MAIL.COM",
+      "PASSWORD": "$2A$10$TLHIGYKQBOPPMI.ZPLBARESACJ4X7/JK5AJ/MKESDYXLUSXYC/O5Q",
+      "ROLE": "ADMIN"
+    },
+    {
+      "ID": 2,
+      "FIRSTNAME": "Imdad",
+      "LASTNAME": "Manik",
+      "email": "imdad@mail.com",
+      "PASSWORD": "$2a$10$d4AuI1Uk5AoaCMmJhweL9e2siRZHWGMCGyQkC.nJlWVb12cv0oBWW",
+      "ROLE": "ADMIN"
+    },
+    {
+      "ID": null,
+      "FIRSTNAME": "Imdad1",
+      "LASTNAME": "Manik1",
+      "email": "manik@mail.com",
+      "PASSWORD": "$2a$10$hkGABODM2gx3/iNjw0PJfebLyWdOxM9IVOpCNd6ZOVLnnbRWHxxx.",
+      "ROLE": "MANAGER"
+    }
+  ]
+}
