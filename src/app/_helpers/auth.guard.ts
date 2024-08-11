@@ -14,14 +14,14 @@ export const authGuard: CanActivateFn = (
     take(1), // take the first one and then unsubscribe automatically
     map(user => {
       // check if route is restricted by role
-      debugger
+      
       const { roles } = route.data;
       if(user && user.role && roles.includes(user.role.name)) {
-        debugger
+        
        return true;
       }
       if(user) {
-        debugger
+        
        return  router.createUrlTree(['/forbidden']);
       }
       return  router.createUrlTree(['/login']);

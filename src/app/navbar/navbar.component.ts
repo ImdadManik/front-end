@@ -14,10 +14,13 @@ export class NavbarComponent {
   isLogIn = false;
   AuthUserSub! : Subscription;
   ngOnInit(): void {
+  
    this.AuthUserSub = this.authService.AuthenticatedUser$.subscribe({
       next : user => {
         if(user) {
-          this.isLogIn = user.role.name === 'ROLE_ADMIN' || user.role.name === 'ROLE_MANAGER';
+          // this.isLogIn = user.role.name === 'ROLE_ADMIN' || user.role.name === 'ROLE_MANAGER';
+          this.isLogIn = this.authService.isLogin;  
+          console.log('Is logged in:', this.isLogIn); // Debug line
         }
       }
     })

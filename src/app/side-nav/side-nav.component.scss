@@ -138,11 +138,12 @@ a[aria-expanded="true"] {
 /* Content Styles */
 
 #content {
-  width: 84.2vw;
-  max-width: 84.2vw;
+  // width: 84.2vw;
+  // max-width: 84.2vw;
   height: 89.9vh;
   max-height: 100vh;
   padding: 20px;
+  overflow: scroll;
 }
 
 /* Media Queries */

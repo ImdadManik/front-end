@@ -15,12 +15,12 @@ export class HttpInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    debugger
+    
     return this.authService.AuthenticatedUser$.pipe(
       take(1),
       switchMap(user => {
         if (!user) {
-          debugger
+          
           return next.handle(request);
         }
         return next.handle(request).pipe(

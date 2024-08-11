@@ -11,23 +11,17 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   getUserPublicContent() {
-    debugger
-
+     
     // return  this.http.request('post','http://localhost:8086/api/v1/user/resource', {
     //     withCredentials: true,
     //     responseType : "text"
-    //   })
-     
-
-    return this.http.request('post', `${this.localUrls}/resources/user/resource`, {
-      withCredentials: true,
-      responseType: 'text',
-    });
+    //   }) 
+    return this.http.request('post', `${this.localUrls}/resources/user/resource`);
   } 
 
   getAdminPublicContent() {
-    debugger; 
-    return this.http.request('post', `${this.localUrls}/resources/admin/resource`, {
+    ; 
+    return this.http.request('get', `${this.localUrls}/resources/admin/resource`, {
       withCredentials: true,
       responseType: 'text',
     });
