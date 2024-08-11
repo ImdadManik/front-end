@@ -1,55 +1,32 @@
-<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
-    <mat-toolbar color="primary" class="example-toolbar">
-        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
-        <h1 class="example-app-name">Responsive App</h1>
-    </mat-toolbar>
-
-    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
-            fixedTopGap="56">
-            <mat-nav-list>
-                <span *ngFor="let item of menu">
-                    <span *ngIf="item.children && item.children.length > 0">
-                        <mat-accordion>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <!-- Cabeceras del submenu -->
-                                        <div fxLayout="row" fxLayoutAlign="space-between center">
-                                            <mat-icon>{{item.iconName}}</mat-icon>
-                                            {{item.displayName}}
-                                        </div>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <span *ngFor="let child of item.children">
-                                    <mat-list-item routerLink="[child.route]">
-                                        <!-- Entradas de cada submenú  -->
-                                        <div fxLayout="row" fxLayoutAlign="space-between center">
-                                            <mat-icon>{{child.iconName}}</mat-icon>
-                                            {{child.displayName}}
-                                        </div>
-                                    </mat-list-item>
-                                </span>
-                            </mat-expansion-panel>
-                        </mat-accordion>
-                    </span>
-                    <span *ngIf="!item.children || item.children.length === 0">
-                        <mat-list-item routerLink="[item.route]">
-                            <!-- Entradas principales -->
-                            <div fxLayout="row" fxLayoutAlign="space-between center">
-                                <mat-icon>{{item.iconName}}</mat-icon>
-                                {{item.displayName}}
-                            </div>
-                        </mat-list-item>
-                    </span>
-                </span>
-            </mat-nav-list>
-        </mat-sidenav>
-
-        <mat-sidenav-content>
-            <h3>this is our content page</h3>
-        </mat-sidenav-content>
-            
-    </mat-sidenav-container>
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h6>Digibriq</h6>
+        </div>
+        <ul class="list-unstyled components">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a>
+            </li>
+            <li class="nav-item" *ngIf="showAdminBoard">
+                <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin Board</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="toggleProjects()">
+                    <i class="fa fa-project-diagram"></i> Projects
+                </a>
+                <ul class="list-unstyled" [ngClass]="{ 'd-block': isProjectsOpen, 'd-none': !isProjectsOpen }">
+                    <li><a class="nav-link" routerLink="/admin/create-project" routerLinkActive="active">Create</a></li>
+                    <li><a class="nav-link" routerLink="/admin/projects/:id" routerLinkActive="active">Update</a></li>
+                    <li><a class="nav-link" routerLink="/admin/projects" routerLinkActive="active">List</a></li>
+                </ul>
+            </li>
+        </ul> 
+    </nav> 
+    <!-- Page Content  -->
+    <div>
+        <div id="content">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </div>
- 
